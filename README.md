@@ -22,7 +22,7 @@ Additional notes or tutorials will be available on this repository on on my own 
 
 ## When
 
-I don't know. I put more effort on this readme file than on anything else...
+I don't know. I put more effort on this readme file than on anything else on this repo...
 
 ## Who
 Me, [Alniarez](https://github.com/Alniarez).
