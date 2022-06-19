@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<title>tree generator</title>
+<script src='generate.js' defer></script> 
+
+<form action="#">
+    Title
+    <input type='text' name='title' required>
+
+    Description
+    <textarea name='description' ></textarea>
+    Image URL
+    <input type='url'>
+
+    Links
+    <div id='entries'>
+    </div>
+    <button type='button' onclick='addRow()'>Add link</button>
+
+
+    <button type='button'>Generate</button>
+</form>
+
+<div id="end"></div>
+
+
+<style>
+    form {
+        display: flex;
+        flex-flow: column;
+    }
+
+    #entries {
+        display: flex;
+        flex-flow: column;
+    }
+
+</style>
