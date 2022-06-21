@@ -2,25 +2,29 @@
 <title>tree generator</title>
 <script src='generate.js' defer></script> 
 
-<form action="#">
+<form>
     Title
     <input type='text' name='title' required>
 
     Description
     <textarea name='description' ></textarea>
+    
     Image URL
-    <input type='url'>
+    <input type='url' name='url'>
 
     Links
     <div id='entries'>
     </div>
+
     <button type='button' onclick='addRow()'>Add link</button>
 
-
-    <button type='button'>Generate</button>
+    <button type='button' onclick="generate()">Generate</button>
 </form>
 
-<div id="end"></div>
+<div>
+    <textarea id="result">
+    </textarea>
+</div>
 
 
 <style>
