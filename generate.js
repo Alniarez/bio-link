@@ -1,4 +1,4 @@
-var counter = 1;
+var counter = 0;
 
 function addRow(){
     console.log('Adding row')
@@ -8,7 +8,7 @@ function addRow(){
     name.setAttribute('required', '');
 
     let link  = document.createElement('input')
-    link.setAttribute('link', `link-${counter}`)
+    link.setAttribute('name', `link-${counter}`)
     name.setAttribute('required', '');
 
     let button  = document.createElement('button')
@@ -47,10 +47,53 @@ function deleteRow(event){
     */
 }
 
-function generate(form){
-    console.log('Generating')
+function validate(){
+    return true;
+}
 
-    console.dir(form)
+function generate(){
+    console.log('Generating')
+    let title;
+    let description;
+    let imageUrl;
+    let links = [];
+    let names = [];
+
+    const formData = new FormData(document.querySelector('form'))
+    for (var pair of formData.entries()) {
+        let key = pair[0];
+        let value = pair[1];
+        if(key === 'title')
+            title = value
+
+        if(key === 'description')
+            description = value
+
+        if(key === 'url')
+            imageUrl = value
+
+        if(key.startsWith("name-")){
+            let index = key.substring(5)
+            names[parseInt(index)] = value
+        }
+
+        if(key.startsWith("link-")){
+            let index = key.substring(5)
+            links[parseInt(index)] = value
+        }
+        
+        renderhtml({
+            title: title,
+            description: description,
+            imageUrl: imageUrl,
+            links: links,
+            names: names
+        })
+    }
+}
+
+function renderhtml(parameters) {
+    console.dir(parameters)
 }
 
 console.log('I am ready')
